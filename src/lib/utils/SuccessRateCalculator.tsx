@@ -5,7 +5,6 @@ export function successRateCalcu(jobs: any[], clips: Clips[]) {
 
   //get total number of clips of completed jobs and failed
   jobs.map((job) => {
-    if (job.status === "completed" || job.status === "failed")
       jobs_total_clips +=
         (Number(job.variationsPerClip) * Number(job.clipsPerVideo));
   });
