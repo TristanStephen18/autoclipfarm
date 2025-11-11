@@ -1,0 +1,1 @@
+ export const backendPrefix = "https://autoclip-backend-2.onrender.com";
