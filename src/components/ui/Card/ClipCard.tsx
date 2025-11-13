@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { formatDistanceToNow } from "date-fns";
 import {
-  MdDeleteOutline,
   MdPlayArrow,
   MdFavoriteBorder,
   MdFavorite,
@@ -31,13 +30,6 @@ export const ClipCard = ({
   const [showPlayer, setShowPlayer] = useState(false);
   const [isFavorite, setIsFavorite] = useState(clip.favourite);
   const [isLoading, setIsLoading] = useState(!clip.clipUrl); // 🔹 Show loader if URL missing
-
-  const handleDelete = () => {
-    if (confirm("Are you sure you want to delete this clip?")) {
-      console.log("Deleting clip:", clip.clipId);
-      // TODO: API call
-    }
-  };
 
   const handleOpenPlayer = () => {
     if (isLoading || !clip.clipUrl) return;
@@ -91,17 +83,6 @@ export const ClipCard = ({
               {(clip.duration % 60).toString().padStart(2, "0")}
             </div>
           )}
-
-          {/* Delete Button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              handleDelete();
-            }}
-            className="absolute top-3 right-3 bg-white/90 hover:bg-red-100 text-red-500 p-1.5 rounded-full shadow-sm transition"
-          >
-            <MdDeleteOutline className="text-lg" />
-          </button>
         </div>
 
         {/* Info Section */}
