@@ -1,1 +1,1 @@
- export const backendPrefix = "https://autoclip-backend-2.onrender.com";
+ export const backendPrefix = "https://autoclip-backend-2-25lp.onrender.com";
