@@ -79,7 +79,7 @@ const ProfilePage: React.FC<{
           {[
             { label: "Total Jobs", value: jobs.length, color: "blue" },
             { label: "Total Clips", value: clips.length, color: "green" },
-            { label: "Followers", value: "1.2k", color: "blue" },
+            { label: "Followers", value: "0", color: "blue" },
           ].map((stat, i) => (
             <div
               key={i}
