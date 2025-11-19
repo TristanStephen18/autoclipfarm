@@ -2,11 +2,9 @@ import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { signupUser, type SignupData } from "../../apis/auth";
 import toast from "react-hot-toast";
-import { useLocation } from "wouter";
 
 export const useSignUpHooks = () => {
   const [isSigningUp, setIsSigningUp] = useState(false);
-  const [, navigate] = useLocation();
 
   const mutation = useMutation({
     mutationFn: (data: SignupData) => signupUser(data),
@@ -15,7 +13,7 @@ export const useSignUpHooks = () => {
     },
     onSuccess: () => {
       toast.success("Signup successful! Please verify your email before logging in.");
-      navigate("/");
+      window.location.reload();
     },
     onError: (error: any) => {
       toast.error("❌ Signup error:", error.message);
